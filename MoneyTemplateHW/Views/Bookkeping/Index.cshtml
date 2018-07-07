@@ -1,24 +1,25 @@
 ﻿@model MoneyTemplateHW.Models.ViewModels.MoneyBook
 
+
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>MoneyBook</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Type,"類別",htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                @Html.DropDownList("category", new SelectList(Model.TypeSelectItemList, "Value", "Text"), htmlAttributes: new { @class = "form-control" })
             </div>
         </div>
 

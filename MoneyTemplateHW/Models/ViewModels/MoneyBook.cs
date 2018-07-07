@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Web.Mvc;
 
 namespace MoneyTemplateHW.Models.ViewModels
 {
@@ -17,6 +16,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// The type.
         /// </value>
         public string Type { get; set; }
+
         /// <summary>
         /// 日期
         /// </summary>
@@ -24,6 +24,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// The date.
         /// </value>
         public DateTime Date { get; set; }
+
         /// <summary>
         /// 金額
         /// </summary>
@@ -31,5 +32,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// The amount.
         /// </value>
         public decimal Amount { get; set; }
+
+        public List<SelectListItem> TypeSelectItemList = new List<SelectListItem>();
     }
 }
