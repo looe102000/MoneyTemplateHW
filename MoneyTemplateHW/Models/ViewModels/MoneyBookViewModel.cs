@@ -9,9 +9,10 @@ namespace MoneyTemplateHW.Models.ViewModels
     /// <summary>
     /// 記帳本 VIEW MODEL
     /// </summary>
+    /// <seealso cref="MoneyTemplateHW.Models.ViewModels.MoneyBookClass" />
     public class MoneyBookViewModel: MoneyBookClass
     {
-       
+
         /// <summary>
         /// The category select item list
         /// </summary>
@@ -25,8 +26,11 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <summary>
         /// The test
         /// </summary>
-        public List<MoneyBookClass> MBOOKDATA_List = new List<MoneyBookClass>();
+        public List<MoneyBookClass> MoneyBookData_List = new List<MoneyBookClass>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MoneyBookViewModel"/> class.
+        /// </summary>
         public MoneyBookViewModel()
         {
             var PATH = HostingEnvironment.MapPath("~");
@@ -34,7 +38,7 @@ namespace MoneyTemplateHW.Models.ViewModels
 
             foreach (var item in allTestData)
             {
-                MBOOKDATA_List.Add(new MoneyBookClass
+                MoneyBookData_List.Add(new MoneyBookClass
                 {
                     category = item.Element("category").Value,
                     date = Convert.ToDateTime(item.Element("date").Value),

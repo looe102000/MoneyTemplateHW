@@ -64,9 +64,9 @@
                     <th>金額</th>
                 </tr>
                 @{
-                    
 
-                    foreach (var item in Model.MBOOKDATA_List.Select((value, index) => new { index, value }))
+
+                    foreach (var item in Model.MoneyBookData_List.Select((value, index) => new { index, value }))
                     {
                         <tr>
                             <td>@(item.index +1 )</td>
