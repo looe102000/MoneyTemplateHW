@@ -61,7 +61,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         public MoneyBookViewModel()
         {
             var PATH = HostingEnvironment.MapPath("~");
-            var allTestData = XDocument.Load(PATH + "\\Models\\ViewModels\\TEST_DATA.xml").Elements("records").Elements("record");
+            var allTestData = XDocument.Load(PATH + "\\App_Data\\TEST_DATA.xml").Elements("records").Elements("record");
 
             foreach (var item in allTestData)
             {
