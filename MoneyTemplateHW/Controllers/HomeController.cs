@@ -13,6 +13,11 @@ namespace MoneyTemplateHW.Controllers
             return View();
         }
 
+        public ActionResult Bookkeeping()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
