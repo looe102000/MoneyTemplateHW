@@ -158,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\HW_OK.PNG" />
+    <Content Include="App_Data\HW_OK_2.PNG" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
