@@ -71,8 +71,8 @@
                         <tr>
                             <td>@(item.index +1 )</td>
                             <td>@(item.value.category)</td>
-                            <td>@(item.value.date)</td>
-                            <td>@(item.value.money)</td>
+                            <td>@(item.value.date.ToString("yyyy-MM-dd"))</td>
+                            <td>@(item.value.money.ToString("N"))</td>
                         </tr>
                     }
                 }
