@@ -1,52 +1,92 @@
 ﻿@model MoneyTemplateHW.Models.ViewModels.MoneyBook
 
-
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "我的記帳本";
 }
-
-<h2>Index</h2>
-
+<style>
+    /*為了符合設計師版型*/
+    input, select, textarea{
+        max-width:none;
+    }
+</style>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>MoneyBook</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Type,"類別",htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("category", new SelectList(Model.TypeSelectItemList, "Value", "Text"), htmlAttributes: new { @class = "form-control" })
+    <div class="well">
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.category, "類別", htmlAttributes: new { @class = "col-md-2 control-label " })
+                <div class="col-sm-10">
+                    @Html.DropDownList("category", new SelectList(Model.categorySelectItemList, "Value", "Text"), htmlAttributes: new { @class = "form-control" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.money, "金額", htmlAttributes: new { @class = "col-md-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.EditorFor(model => model.money, new { htmlAttributes = new { @class = "form-control", @Value = "", @placeholder = "金額" } })
+                    @Html.ValidationMessageFor(model => model.money, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.date, "日期", htmlAttributes: new { @class = " col-md-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.EditorFor(model => model.date, new { htmlAttributes = new { @class = "form-control", @Value = "", @placeholder = "日期" } })
+                    @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="form-group">
+                @Html.LabelFor(model => model.description, "備註", htmlAttributes: new { @class = " col-md-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextAreaFor(model => model.description, 10, 80, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-8 col-sm-4">
+                    <button type="submit" class="btn btn-default">送出</button>
+                </div>
             </div>
         </div>
     </div>
-}
 
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>#</th>
+                    <th>類別</th>
+                    <th>日期</th>
+                    <th>金額</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>支出</td>
+                    <td>2016-01-01</td>
+                    <td>300</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>支出</td>
+                    <td>2016-01-02</td>
+                    <td>1,600</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>支出</td>
+                    <td>2016-01-03</td>
+                    <td>8,00</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+}
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

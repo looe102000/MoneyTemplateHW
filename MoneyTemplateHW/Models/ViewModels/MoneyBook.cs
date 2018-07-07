@@ -15,7 +15,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <value>
         /// The type.
         /// </value>
-        public string Type { get; set; }
+        public string category { get; set; }
 
         /// <summary>
         /// 日期
@@ -23,7 +23,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <value>
         /// The date.
         /// </value>
-        public DateTime Date { get; set; }
+        public DateTime date { get; set; }
 
         /// <summary>
         /// 金額
@@ -31,8 +31,10 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <value>
         /// The amount.
         /// </value>
-        public decimal Amount { get; set; }
+        public decimal money { get; set; }
 
-        public List<SelectListItem> TypeSelectItemList = new List<SelectListItem>();
+        public string description { get; set; }
+
+        public List<SelectListItem> categorySelectItemList = new List<SelectListItem>();
     }
 }

@@ -13,7 +13,7 @@ namespace MoneyTemplateHW.Controllers
         public ActionResult Index(MoneyBook MB)
         {
 
-            MB.TypeSelectItemList = new List<SelectListItem>
+            MB.categorySelectItemList = new List<SelectListItem>
             {
                 new SelectListItem{Text="請選擇",Value=null,Selected = true},
                 new SelectListItem{Text="支出",Value=null},
