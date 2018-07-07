@@ -1,6 +1,6 @@
 ﻿using MoneyTemplateHW.Models.ViewModels;
-using System.Web.Mvc;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace MoneyTemplateHW.Controllers
 {

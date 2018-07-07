@@ -10,9 +10,8 @@ namespace MoneyTemplateHW.Models.ViewModels
     /// 記帳本 VIEW MODEL
     /// </summary>
     /// <seealso cref="MoneyTemplateHW.Models.ViewModels.MoneyBookClass" />
-    public class MoneyBookViewModel: MoneyBookClass
+    public class MoneyBookViewModel : MoneyBookClass
     {
-
         /// <summary>
         /// The category select item list
         /// </summary>
@@ -46,7 +45,5 @@ namespace MoneyTemplateHW.Models.ViewModels
                 });
             }
         }
-
-        
     }
 }
