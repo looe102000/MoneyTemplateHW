@@ -11,32 +11,29 @@ namespace MoneyTemplateHW.Models.ViewModels
     /// </summary>
     public class MoneyBookViewModel
     {
-        public class MBOOKDATA
-        {
-            /// <summary>
-            /// 類別
-            /// </summary>
-            /// <value>
-            /// The type.
-            /// </value>
-            public string category { get; set; }
+        /// <summary>
+        /// 類別
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
+        public string category { get; set; }
 
-            /// <summary>
-            /// 日期
-            /// </summary>
-            /// <value>
-            /// The date.
-            /// </value>
-            public DateTime date { get; set; }
+        /// <summary>
+        /// 日期
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
+        public DateTime date { get; set; }
 
-            /// <summary>
-            /// 金額
-            /// </summary>
-            /// <value>
-            /// The amount.
-            /// </value>
-            public decimal money { get; set; }
-        }
+        /// <summary>
+        /// 金額
+        /// </summary>
+        /// <value>
+        /// The amount.
+        /// </value>
+        public decimal money { get; set; }
 
         /// <summary>
         /// Gets or sets the description.
@@ -59,9 +56,8 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <summary>
         /// The test
         /// </summary>
-        public List<MBOOKDATA> test = new List<MBOOKDATA>();
+        public List<MBOOKVIEWDATA> MBOOKDATA_List = new List<MBOOKVIEWDATA>();
 
-       
         public MoneyBookViewModel()
         {
             var PATH = HostingEnvironment.MapPath("~");
@@ -69,14 +65,40 @@ namespace MoneyTemplateHW.Models.ViewModels
 
             foreach (var item in allTestData)
             {
-                test.Add(new MBOOKDATA
+                MBOOKDATA_List.Add(new MBOOKVIEWDATA
                 {
-                    category = item.Element("category").Value
+                    category = item.Element("category").Value,
+                    date = Convert.ToDateTime(item.Element("date").Value).ToString("yyyy-MM-dd"),
+                    money = Convert.ToDecimal(item.Element("money").Value).ToString("N")
                 });
             }
         }
 
-       
+        public class MBOOKVIEWDATA
+        {
+            /// <summary>
+            /// 類別
+            /// </summary>
+            /// <value>
+            /// The type.
+            /// </value>
+            public string category { get; set; }
 
+            /// <summary>
+            /// 日期
+            /// </summary>
+            /// <value>
+            /// The date.
+            /// </value>
+            public string date { get; set; }
+
+            /// <summary>
+            /// 金額
+            /// </summary>
+            /// <value>
+            /// The amount.
+            /// </value>
+            public string money { get; set; }
+        }
     }
 }
