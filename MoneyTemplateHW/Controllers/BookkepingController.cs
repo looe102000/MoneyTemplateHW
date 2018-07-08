@@ -10,7 +10,6 @@ namespace MoneyTemplateHW.Controllers
         // GET: BookkepingController
         public ActionResult Index()
         {
-           
             return View();
         }
 
