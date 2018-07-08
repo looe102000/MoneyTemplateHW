@@ -8,7 +8,14 @@ namespace MoneyTemplateHW.Controllers
     public class BookkepingController : Controller
     {
         // GET: BookkepingController
-        public ActionResult Index( int? page)
+        public ActionResult Index()
+        {
+           
+            return View();
+        }
+
+        [ChildActionOnly]
+        public ActionResult DataListAction(int? page)
         {
             if (page == null)
             {
@@ -24,9 +31,9 @@ namespace MoneyTemplateHW.Controllers
             //                                                .OrderByDescending(x => x.date)
             //                                                .ThenByDescending(x =>x.money).Skip((pageCnt -1) * pageRows).Take(pageRows).ToList();
             ViewData["ListSource"] = MoneyBookViewComponents.GetFakeData()
-                                                            .OrderByDescending(d=>d.Date)
-                                                            .ThenByDescending(d=>d.Money)
-                                                            .Skip((pageCnt -1) * pageRows).Take(pageRows)
+                                                            .OrderByDescending(d => d.Date)
+                                                            .ThenByDescending(d => d.Money)
+                                                            .Skip((pageCnt - 1) * pageRows).Take(pageRows)
                                                             .ToList();
 
             return View();
