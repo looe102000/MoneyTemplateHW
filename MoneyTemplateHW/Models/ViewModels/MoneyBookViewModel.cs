@@ -17,7 +17,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// </summary>
         public IEnumerable<SelectListItem> categorySelectItemList = new List<SelectListItem>
             {
-                new SelectListItem{Text="請選擇",Value=null,Selected = true},
+                new SelectListItem{Text="請選擇",Value=null,Selected = true,Disabled=true },
                 new SelectListItem{Text="支出",Value="1"},
                 new SelectListItem{Text="收入",Value="2"}
             };
