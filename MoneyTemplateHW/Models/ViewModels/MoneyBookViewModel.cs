@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using System.Xml.Linq;
@@ -23,7 +27,7 @@ namespace MoneyTemplateHW.Models.ViewModels
             };
 
         /// <summary>
-        /// The test
+        /// The MoneyBookData_List
         /// </summary>
         public List<MoneyBookClass> MoneyBookData_List = new List<MoneyBookClass>();
 
@@ -33,17 +37,31 @@ namespace MoneyTemplateHW.Models.ViewModels
         public MoneyBookViewModel()
         {
             var PATH = HostingEnvironment.MapPath("~");
-            var allTestData = XDocument.Load(PATH + "\\App_Data\\TEST_DATA.xml").Elements("records").Elements("record");
-
-            foreach (var item in allTestData)
+            
+            //json 版
+            using (StreamReader r = new StreamReader(PATH + "\\App_Data\\TEST_DATA_JSON.JSON"))
             {
-                MoneyBookData_List.Add(new MoneyBookClass
+                var ReadJason = JsonConvert.DeserializeObject<JObject>(r.ReadToEnd());
+
+                IList<JToken> results = ReadJason["records"]["record"].Children().ToList();
+
+                foreach (JToken result in results)
                 {
-                    category = item.Element("category").Value,
-                    date = item.Element("date").Value,
-                    money = Convert.ToDecimal(item.Element("money").Value)
-                });
+                    MoneyBookData_List.Add(result.ToObject<MoneyBookClass>());
+                }
             }
+
+           // var allTestData = XDocument.Load(PATH + "\\App_Data\\TEST_DATA.xml").Elements("records").Elements("record");
+
+            //foreach (var item in allTestData)
+            //{
+            //    MoneyBookData_List.Add(new MoneyBookClass
+            //    {
+            //        category = item.Element("category").Value,
+            //        date = item.Element("date").Value,
+            //        money = Convert.ToDecimal(item.Element("money").Value)
+            //    });
+            //}
         }
     }
 }

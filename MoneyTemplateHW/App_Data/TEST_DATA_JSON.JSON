@@ -1,0 +1,606 @@
+﻿{
+  "records": {
+    "record": [
+      {
+        "category": "2",
+        "date": "2018-06-26",
+        "money": "1193",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-06",
+        "money": "622",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-07",
+        "money": "1130",
+        "description": "聚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-22",
+        "money": "1337",
+        "description": "飲料"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-29",
+        "money": "1227",
+        "description": "午餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-07-03",
+        "money": "100",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-29",
+        "money": "424",
+        "description": "聚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-26",
+        "money": "495",
+        "description": "早餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-18",
+        "money": "969",
+        "description": "早餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-29",
+        "money": "1904",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-06",
+        "money": "1202",
+        "description": "飲料"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-08",
+        "money": "34",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-23",
+        "money": "821",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-26",
+        "money": "337",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-02",
+        "money": "1851",
+        "description": "聚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-20",
+        "money": "1539",
+        "description": "其他"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-27",
+        "money": "392",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-26",
+        "money": "1176",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-05",
+        "money": "1378",
+        "description": "晚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-23",
+        "money": "1844",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-04",
+        "money": "109",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-23",
+        "money": "1285",
+        "description": "晚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-29",
+        "money": "11",
+        "description": "午餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-03",
+        "money": "1214",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-14",
+        "money": "847",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-05",
+        "money": "1577",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-17",
+        "money": "259",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-11",
+        "money": "1773",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-06",
+        "money": "40",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-03",
+        "money": "1129",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-04",
+        "money": "441",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-01",
+        "money": "290",
+        "description": "其他"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-24",
+        "money": "518",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-08",
+        "money": "212",
+        "description": "其他"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-16",
+        "money": "1545",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-14",
+        "money": "1030",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-08",
+        "money": "981",
+        "description": "午餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-07",
+        "money": "975",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-29",
+        "money": "1167",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-15",
+        "money": "1454",
+        "description": "早餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-08",
+        "money": "219",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-18",
+        "money": "975",
+        "description": "晚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-12",
+        "money": "924",
+        "description": "早餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-25",
+        "money": "193",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-06",
+        "money": "864",
+        "description": "晚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-12",
+        "money": "71",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-22",
+        "money": "347",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-04",
+        "money": "894",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-05",
+        "money": "540",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-07-06",
+        "money": "1169",
+        "description": "飲料"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-08",
+        "money": "1610",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-28",
+        "money": "1367",
+        "description": "飲料"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-05",
+        "money": "216",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-05",
+        "money": "1767",
+        "description": "午餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-01",
+        "money": "890",
+        "description": "聚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-24",
+        "money": "663",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-08",
+        "money": "1087",
+        "description": "聚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-26",
+        "money": "69",
+        "description": "晚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-19",
+        "money": "899",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-08",
+        "money": "1766",
+        "description": "聚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-24",
+        "money": "204",
+        "description": "晚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-13",
+        "money": "984",
+        "description": "午餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-29",
+        "money": "1628",
+        "description": "早餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-21",
+        "money": "311",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-06",
+        "money": "1311",
+        "description": "早餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-13",
+        "money": "1346",
+        "description": "聚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-04",
+        "money": "688",
+        "description": "晚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-14",
+        "money": "156",
+        "description": "其他"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-21",
+        "money": "548",
+        "description": "其他"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-20",
+        "money": "1403",
+        "description": "晚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-09",
+        "money": "1954",
+        "description": "早餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-05",
+        "money": "1747",
+        "description": "早餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-08",
+        "money": "1277",
+        "description": "晚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-05",
+        "money": "1140",
+        "description": "飲料"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-06",
+        "money": "1836",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-20",
+        "money": "225",
+        "description": "飲料"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-06",
+        "money": "667",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-08",
+        "money": "1730",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-25",
+        "money": "920",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-27",
+        "money": "556",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-17",
+        "money": "1741",
+        "description": "飲料"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-19",
+        "money": "360",
+        "description": "早餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-20",
+        "money": "1676",
+        "description": "聚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-03",
+        "money": "1417",
+        "description": "早餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-07-01",
+        "money": "1981",
+        "description": "早餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-07-08",
+        "money": "805",
+        "description": "晚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-11",
+        "money": "695",
+        "description": "其他"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-29",
+        "money": "915",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-30",
+        "money": "622",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-08",
+        "money": "559",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-07-08",
+        "money": "17",
+        "description": "飲料"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-11",
+        "money": "1177",
+        "description": "聚餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-09",
+        "money": "1333",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-02",
+        "money": "1976",
+        "description": "早餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-20",
+        "money": "1539",
+        "description": "早餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-15",
+        "money": "130",
+        "description": "其他"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-23",
+        "money": "1786",
+        "description": "晚餐"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-08",
+        "money": "110",
+        "description": "飲料"
+      },
+      {
+        "category": "2",
+        "date": "2018-06-18",
+        "money": "1485",
+        "description": "午餐"
+      },
+      {
+        "category": "1",
+        "date": "2018-06-21",
+        "money": "462",
+        "description": "聚餐"
+      }
+    ]
+  }
+}
