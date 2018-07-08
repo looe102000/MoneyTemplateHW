@@ -1,14 +1,10 @@
-﻿@model MoneyTemplateHW.Models.ViewModels.MoneyBookViewModel
+﻿@using MoneyTemplateHW.Models.ViewModels
+@model MoneyTemplateHW.Models.ViewModels.MoneyBookViewModel
 
 @{
     ViewBag.Title = "我的記帳本";
 }
-<style>
-    /*為了符合設計師版型*/
-    input, select, textarea {
-        max-width: none;
-    }
-</style>
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -16,33 +12,38 @@
     <div class="well">
         <div class="form-horizontal">
             <div class="form-group">
-                @Html.LabelFor(model => Model.category, "類別", htmlAttributes: new { @class = "col-md-2 control-label " })
+                @Html.LabelFor(model => Model.Category, "類別", htmlAttributes: new { @class = "col-md-2 control-label " })
                 <div class="col-sm-10">
-                    @Html.DropDownListFor(model => model.category, Model.categorySelectItemList, htmlAttributes : new { @class = "form-control"})
+                    @*@Html.DropDownListFor(model => model.category, Model.categorySelectItemList, htmlAttributes : new { @class = "form-control"})*@
+                   @*因為如果這裡也幫你改，那會改變到你的架構，所以先放回html，等我們教到的時候你自己再調整*@
+                    <select id="category" class="form-control">
+                        <option value="" selected>請選擇</option>
+                        <option>支出</option>
+                        <option>收入</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Money, "金額", htmlAttributes: new { @class = "col-md-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.EditorFor(model => model.Money, new { htmlAttributes = new { @class = "form-control", @Value = "", @placeholder = "金額" } })
+                    @Html.ValidationMessageFor(model => model.Money, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.money, "金額", htmlAttributes: new { @class = "col-md-2 control-label" })
+                @Html.LabelFor(model => model.Date, "日期", htmlAttributes: new { @class = " col-md-2 control-label" })
                 <div class="col-sm-10">
-                    @Html.EditorFor(model => model.money, new { htmlAttributes = new { @class = "form-control", @Value = "", @placeholder = "金額" } })
-                    @Html.ValidationMessageFor(model => model.money, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", @Value = "", @placeholder = "日期" } })
+                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.date, "日期", htmlAttributes: new { @class = " col-md-2 control-label" })
+                @Html.LabelFor(model => model.Description, "備註", htmlAttributes: new { @class = " col-md-2 control-label" })
                 <div class="col-sm-10">
-                    @Html.EditorFor(model => model.date, new { htmlAttributes = new { @class = "form-control", @Value = "", @placeholder = "日期" } })
-                    @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.description, "備註", htmlAttributes: new { @class = " col-md-2 control-label" })
-                <div class="col-sm-10">
-                    @Html.TextAreaFor(model => model.description, 0, 0, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                    @Html.TextAreaFor(model => model.Description, 0, 0, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -65,13 +66,13 @@
                 </tr>
                 @{
 
-                    foreach (var item in Model.MoneyBookData_List.Select((value, index) => new { index, value }))
+                    foreach (var item in ((List<MoneyBookViewModel>)ViewData["ListSource"]).Select((value, index) => new { index, value }))
                     {
                         <tr>
                             <td>@(item.index +1 )</td>
-                            <td>@(item.value.category.Equals("1") ? "支出":"收入")</td>
-                            <td>@(item.value.date)</td>
-                            <td>@(string.Format("{0:0,0}", item.value.money))</td>
+                            <td>@(item.value.Category.Equals("1") ? "支出":"收入")</td>
+                            <td>@(item.value.Date)</td>
+                            <td>@item.value.Money.ToString("N0")</td>
                         </tr>
                     }
                 }

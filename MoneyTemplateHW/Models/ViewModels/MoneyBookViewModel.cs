@@ -1,67 +1,39 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web.Hosting;
-using System.Web.Mvc;
-using System.Xml.Linq;
+﻿using System;
 
 namespace MoneyTemplateHW.Models.ViewModels
 {
-    /// <summary>
-    /// 記帳本 VIEW MODEL
-    /// </summary>
-    /// <seealso cref="MoneyTemplateHW.Models.ViewModels.MoneyBookClass" />
-    public class MoneyBookViewModel : MoneyBookClass
+    public class MoneyBookViewModel
     {
         /// <summary>
-        /// The category select item list
+        /// 類別
         /// </summary>
-        public IEnumerable<SelectListItem> categorySelectItemList = new List<SelectListItem>
-            {
-                new SelectListItem{Text="請選擇",Value=null,Selected = true,Disabled=true },
-                new SelectListItem{Text="支出",Value="1"},
-                new SelectListItem{Text="收入",Value="2"}
-            };
+        /// <value>
+        /// The type.
+        /// </value>
+        public string Category { get; set; }
 
         /// <summary>
-        /// The MoneyBookData_List
+        /// 日期
         /// </summary>
-        public List<MoneyBookClass> MoneyBookData_List = new List<MoneyBookClass>();
+        /// <value>
+        /// The date.
+        /// </value>
+        public string Date { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MoneyBookViewModel"/> class.
+        /// 金額
         /// </summary>
-        public MoneyBookViewModel()
-        {
-            var PATH = HostingEnvironment.MapPath("~");
-            
-            //json 版
-            using (StreamReader r = new StreamReader(PATH + "\\App_Data\\TEST_DATA_JSON.JSON"))
-            {
-                var ReadJason = JsonConvert.DeserializeObject<JObject>(r.ReadToEnd());
+        /// <value>
+        /// The amount.
+        /// </value>
+        public decimal Money { get; set; }
 
-                IList<JToken> results = ReadJason["records"]["record"].Children().ToList();
-
-                foreach (JToken result in results)
-                {
-                    MoneyBookData_List.Add(result.ToObject<MoneyBookClass>());
-                }
-            }
-
-           // var allTestData = XDocument.Load(PATH + "\\App_Data\\TEST_DATA.xml").Elements("records").Elements("record");
-
-            //foreach (var item in allTestData)
-            //{
-            //    MoneyBookData_List.Add(new MoneyBookClass
-            //    {
-            //        category = item.Element("category").Value,
-            //        date = item.Element("date").Value,
-            //        money = Convert.ToDecimal(item.Element("money").Value)
-            //    });
-            //}
-        }
+        /// <summary>
+        /// Gets or sets the description.
+        /// </summary>
+        /// <value>
+        /// The description.
+        /// </value>
+        public string Description { get; set; }
     }
 }
