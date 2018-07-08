@@ -18,7 +18,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <value>
         /// The date.
         /// </value>
-        public DateTime date { get; set; }
+        public string date { get; set; }
 
         /// <summary>
         /// 金額

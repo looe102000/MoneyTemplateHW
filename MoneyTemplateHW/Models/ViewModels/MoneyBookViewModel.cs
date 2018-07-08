@@ -15,11 +15,11 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <summary>
         /// The category select item list
         /// </summary>
-        public List<SelectListItem> categorySelectItemList = new List<SelectListItem>
+        public IEnumerable<SelectListItem> categorySelectItemList = new List<SelectListItem>
             {
                 new SelectListItem{Text="請選擇",Value=null,Selected = true},
-                new SelectListItem{Text="支出",Value=null},
-                new SelectListItem{Text="收入",Value=null}
+                new SelectListItem{Text="支出",Value="1"},
+                new SelectListItem{Text="收入",Value="2"}
             };
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace MoneyTemplateHW.Models.ViewModels
                 MoneyBookData_List.Add(new MoneyBookClass
                 {
                     category = item.Element("category").Value,
-                    date = Convert.ToDateTime(item.Element("date").Value),
+                    date = item.Element("date").Value,
                     money = Convert.ToDecimal(item.Element("money").Value)
                 });
             }

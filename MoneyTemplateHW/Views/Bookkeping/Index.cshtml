@@ -18,7 +18,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => Model.category, "類別", htmlAttributes: new { @class = "col-md-2 control-label " })
                 <div class="col-sm-10">
-                    @Html.DropDownList("category", new SelectList(Model.categorySelectItemList, "Value", "Text"), htmlAttributes: new { @class = "form-control" })
+                    @Html.DropDownList("category", new SelectList(Model.categorySelectItemList, "Value", "Text"), htmlAttributes: new { @class = "form-control"})
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group">
-                <div class="col-sm-offset-8 col-sm-4">
+                <div class="col-sm-offset-11 col-sm-4">
                     <button type="submit" class="btn btn-default">送出</button>
                 </div>
             </div>
@@ -69,9 +69,9 @@
                     {
                         <tr>
                             <td>@(item.index +1 )</td>
-                            <td>@(item.value.category)</td>
-                            <td>@(item.value.date.ToString("yyyy-MM-dd"))</td>
-                            <td>@(item.value.money.ToString("N"))</td>
+                            <td>@(item.value.category.Equals("1") ? "支出":"收入")</td>
+                            <td>@(item.value.date)</td>
+                            <td>@(string.Format("{0:0,0}", item.value.money))</td>
                         </tr>
                     }
                 }
@@ -80,6 +80,3 @@
     </div>
 
 }
-@*<div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>*@
