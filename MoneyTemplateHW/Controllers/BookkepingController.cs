@@ -24,8 +24,8 @@ namespace MoneyTemplateHW.Controllers
             //                                                .OrderByDescending(x => x.date)
             //                                                .ThenByDescending(x =>x.money).Skip((pageCnt -1) * pageRows).Take(pageRows).ToList();
             ViewData["ListSource"] = MoneyBookViewComponents.GetFakeData()
-                                                            .OrderByDescending(d=>d.date)
-                                                            .ThenByDescending(d=>d.money)
+                                                            .OrderByDescending(d=>d.Date)
+                                                            .ThenByDescending(d=>d.Money)
                                                             .Skip((pageCnt -1) * pageRows).Take(pageRows)
                                                             .ToList();
 

@@ -10,7 +10,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <value>
         /// The type.
         /// </value>
-        public string category { get; set; }
+        public string Category { get; set; }
 
         /// <summary>
         /// 日期
@@ -18,7 +18,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <value>
         /// The date.
         /// </value>
-        public string date { get; set; }
+        public string Date { get; set; }
 
         /// <summary>
         /// 金額
@@ -26,7 +26,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <value>
         /// The amount.
         /// </value>
-        public decimal money { get; set; }
+        public decimal Money { get; set; }
 
         /// <summary>
         /// Gets or sets the description.
@@ -34,6 +34,6 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <value>
         /// The description.
         /// </value>
-        public string description { get; set; }
+        public string Description { get; set; }
     }
 }
