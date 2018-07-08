@@ -8,7 +8,7 @@ namespace MoneyTemplateHW.Controllers
     public class BookkepingController : Controller
     {
         // GET: BookkepingController
-        public ActionResult Index(MoneyBookViewModel MBV, int? page)
+        public ActionResult Index( int? page)
         {
             if (page == null)
             {
@@ -20,12 +20,16 @@ namespace MoneyTemplateHW.Controllers
             var pageRows = 50;
 
             //日期大到小；金額大到小
-            MBV.MoneyBookDataList = MBV.MoneyBookDataList.AsEnumerable()
-                                                            .OrderByDescending(x => x.date)
-                                                            .ThenByDescending(x =>x.money).Skip((pageCnt -1) * pageRows).Take(pageRows).ToList();
+            //MBV.MoneyBookDataList = MBV.MoneyBookDataList.AsEnumerable()
+            //                                                .OrderByDescending(x => x.date)
+            //                                                .ThenByDescending(x =>x.money).Skip((pageCnt -1) * pageRows).Take(pageRows).ToList();
+            ViewData["ListSource"] = MoneyBookViewComponents.GetFakeData()
+                                                            .OrderByDescending(d=>d.date)
+                                                            .ThenByDescending(d=>d.money)
+                                                            .Skip((pageCnt -1) * pageRows).Take(pageRows)
+                                                            .ToList();
 
-
-            return View(MBV);
+            return View();
         }
     }
 }

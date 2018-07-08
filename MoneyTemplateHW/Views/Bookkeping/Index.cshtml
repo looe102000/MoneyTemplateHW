@@ -1,4 +1,5 @@
-﻿@model MoneyTemplateHW.Models.ViewModels.MoneyBookViewModel
+﻿@using MoneyTemplateHW.Models.ViewModels
+@model MoneyTemplateHW.Models.ViewModels.MoneyBookClass
 
 @{
     ViewBag.Title = "我的記帳本";
@@ -13,10 +14,15 @@
             <div class="form-group">
                 @Html.LabelFor(model => Model.category, "類別", htmlAttributes: new { @class = "col-md-2 control-label " })
                 <div class="col-sm-10">
-                    @Html.DropDownListFor(model => model.category, Model.categorySelectItemList, htmlAttributes : new { @class = "form-control"})
+                    @*@Html.DropDownListFor(model => model.category, Model.categorySelectItemList, htmlAttributes : new { @class = "form-control"})*@
+                   @*因為如果這裡也幫你改，那會改變到你的架構，所以先放回html，等我們教到的時候你自己再調整*@
+                    <select id="category" class="form-control">
+                        <option value="" selected>請選擇</option>
+                        <option>支出</option>
+                        <option>收入</option>
+                    </select>
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.money, "金額", htmlAttributes: new { @class = "col-md-2 control-label" })
                 <div class="col-sm-10">
@@ -60,13 +66,13 @@
                 </tr>
                 @{
 
-                    foreach (var item in Model.MoneyBookDataList.Select((value, index) => new { index, value }))
+                    foreach (var item in ((List<MoneyBookClass>)ViewData["ListSource"]).Select((value, index) => new { index, value }))
                     {
                         <tr>
                             <td>@(item.index +1 )</td>
                             <td>@(item.value.category.Equals("1") ? "支出":"收入")</td>
                             <td>@(item.value.date)</td>
-                            <td>@(string.Format("{0:0,0}", item.value.money))</td>
+                            <td>@item.value.money.ToString("N0")</td>
                         </tr>
                     }
                 }

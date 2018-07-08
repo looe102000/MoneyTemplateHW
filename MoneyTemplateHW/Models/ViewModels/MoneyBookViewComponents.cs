@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using System.Xml.Linq;
@@ -11,15 +12,14 @@ using System.Xml.Linq;
 namespace MoneyTemplateHW.Models.ViewModels
 {
     /// <summary>
-    /// 記帳本 VIEW MODEL
+    /// 記帳本 View Components
     /// </summary>
-    /// <seealso cref="MoneyTemplateHW.Models.ViewModels.MoneyBookClass" />
-    public class MoneyBookViewModel : MoneyBookClass
+    public static class MoneyBookViewComponents
     {
         /// <summary>
         /// The category select item list
         /// </summary>
-        public IEnumerable<SelectListItem> categorySelectItemList = new List<SelectListItem>
+        public static IEnumerable<SelectListItem> categorySelectItemList = new List<SelectListItem>
         {
             new SelectListItem {Text = "請選擇", Value = ""},
             new SelectListItem {Text = "支出", Value  = "1"},
@@ -27,14 +27,9 @@ namespace MoneyTemplateHW.Models.ViewModels
         };
 
         /// <summary>
-        /// The MoneyBookData_List
+        /// Initializes a new instance of the <see cref="MoneyBookViewComponents"/> class.
         /// </summary>
-        public List<MoneyBookClass> MoneyBookDataList = new List<MoneyBookClass>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MoneyBookViewModel"/> class.
-        /// </summary>
-        public MoneyBookViewModel()
+        public static IEnumerable<MoneyBookClass> GetFakeData()
         {
             var path = HostingEnvironment.MapPath("~");
 
@@ -47,7 +42,7 @@ namespace MoneyTemplateHW.Models.ViewModels
 
                 foreach (JToken result in results)
                 {
-                    MoneyBookDataList.Add(result.ToObject<MoneyBookClass>());
+                    yield return result.ToObject<MoneyBookClass>();
                 }
             }
         }
