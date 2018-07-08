@@ -6,8 +6,8 @@
 
 ![alt text](https://github.com/looe102000/MoneyTemplateHW/blob/master/MoneyTemplateHW/App_Data/HW_OK.PNG)
 ![alt text](https://github.com/looe102000/MoneyTemplateHW/blob/master/MoneyTemplateHW/App_Data/HW_OK_2.PNG)
-![alt text](https://github.com/looe102000/MoneyTemplateHW/blob/master/MoneyTemplateHW/App_Data/HW_OK_3.PNG)
-![alt text](https://github.com/looe102000/MoneyTemplateHW/blob/master/MoneyTemplateHW/App_Data/HW_OK_4.PNG)
+![alt text](https://github.com/looe102000/MoneyTemplateHW/blob/master/MoneyTemplateHW/App_Data/HW_OK3.PNG)
+![alt text](https://github.com/looe102000/MoneyTemplateHW/blob/master/MoneyTemplateHW/App_Data/HW_OK4.PNG)
 
 
 
