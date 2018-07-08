@@ -1,0 +1,28 @@
+﻿@using MoneyTemplateHW.Models.ViewModels
+
+@model MoneyTemplateHW.Models.ViewModels.MoneyBookViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>#</th>
+                <th>類別</th>
+                <th>日期</th>
+                <th>金額</th>
+            </tr>
+            @{
+
+                foreach (var item in ((List<MoneyBookViewModel>)ViewData["ListSource"]).Select((value, index) => new { index, value }))
+                {
+                    <tr>
+                        <td>@(item.index + 1 )</td>
+                        <td>@(item.value.Category.Equals("1") ? "支出" : "收入")</td>
+                        <td>@(item.value.Date)</td>
+                        <td>@item.value.Money.ToString("N0")</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>

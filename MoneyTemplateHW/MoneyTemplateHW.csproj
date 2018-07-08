@@ -203,7 +203,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Bookkeping\Index.cshtml" />
-    <Content Include="Views\Bookkeping\_add.cshtml" />
+    <Content Include="Views\Bookkeping\_AddPartial.cshtml" />
     <Content Include="Views\Bookkeping\DataListAction.cshtml" />
   </ItemGroup>
   <ItemGroup />
