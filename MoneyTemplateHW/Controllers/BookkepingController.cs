@@ -8,14 +8,14 @@ namespace MoneyTemplateHW.Controllers
     public class BookkepingController : Controller
     {
         // GET: BookkepingController
-        public ActionResult Index(MoneyBookViewModel MBV, int? id)
+        public ActionResult Index(MoneyBookViewModel MBV, int? page)
         {
-            if (id == null)
+            if (page == null)
             {
-                id = 0;
+                page = 0;
             }
 
-            var pageCnt = (int)id;
+            var pageCnt = (int)page;
             //分 10 頁
             var pageRows = 50;
 
