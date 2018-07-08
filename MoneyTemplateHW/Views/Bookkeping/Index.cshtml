@@ -3,12 +3,7 @@
 @{
     ViewBag.Title = "我的記帳本";
 }
-<style>
-    /*為了符合設計師版型*/
-    input, select, textarea {
-        max-width: none;
-    }
-</style>
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
