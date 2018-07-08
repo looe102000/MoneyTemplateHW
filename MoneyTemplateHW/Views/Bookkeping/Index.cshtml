@@ -67,7 +67,7 @@
 
                     foreach (var item in Model.MoneyBookData_List.Select((value, index) => new { index, value }))
                     {
-                        <tr>
+                        <tr title="備註：@(item.value.description)" >
                             <td>@(item.index +1 )</td>
                             <td>@(item.value.category.Equals("1") ? "支出":"收入")</td>
                             <td>@(item.value.date)</td>
@@ -78,5 +78,4 @@
             </table>
         </div>
     </div>
-
 }
