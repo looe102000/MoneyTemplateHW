@@ -20,7 +20,7 @@ namespace MoneyTemplateHW.Controllers
             var pageRows = 50;
 
             //日期大到小；金額大到小
-            MBV.MoneyBookData_List = MBV.MoneyBookData_List.AsEnumerable()
+            MBV.MoneyBookDataList = MBV.MoneyBookDataList.AsEnumerable()
                                                             .OrderByDescending(x => x.date)
                                                             .ThenByDescending(x =>x.money).Skip((pageCnt -1) * pageRows).Take(pageRows).ToList();
 
