@@ -1,5 +1,5 @@
 ﻿@using MoneyTemplateHW.Models.ViewModels
-@model MoneyTemplateHW.Models.ViewModels.MoneyBookClass
+@model MoneyTemplateHW.Models.ViewModels.MoneyBookViewModel
 
 @{
     ViewBag.Title = "我的記帳本";
@@ -66,7 +66,7 @@
                 </tr>
                 @{
 
-                    foreach (var item in ((List<MoneyBookClass>)ViewData["ListSource"]).Select((value, index) => new { index, value }))
+                    foreach (var item in ((List<MoneyBookViewModel>)ViewData["ListSource"]).Select((value, index) => new { index, value }))
                     {
                         <tr>
                             <td>@(item.index +1 )</td>

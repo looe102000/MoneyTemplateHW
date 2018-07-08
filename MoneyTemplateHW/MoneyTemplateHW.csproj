@@ -153,7 +153,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModels\MoneyBookClass.cs" />
+    <Compile Include="Models\ViewModels\MoneyBookViewModel.cs" />
     <Compile Include="Models\ViewModels\MoneyBookViewComponents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 namespace MoneyTemplateHW.Models.ViewModels
 {
-    public class MoneyBookClass
+    public class MoneyBookViewModel
     {
         /// <summary>
         /// 類別

@@ -29,7 +29,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// <summary>
         /// Initializes a new instance of the <see cref="MoneyBookViewComponents"/> class.
         /// </summary>
-        public static IEnumerable<MoneyBookClass> GetFakeData()
+        public static IEnumerable<MoneyBookViewModel> GetFakeData()
         {
             var path = HostingEnvironment.MapPath("~");
 
@@ -42,7 +42,7 @@ namespace MoneyTemplateHW.Models.ViewModels
 
                 foreach (JToken result in results)
                 {
-                    yield return result.ToObject<MoneyBookClass>();
+                    yield return result.ToObject<MoneyBookViewModel>();
                 }
             }
         }
