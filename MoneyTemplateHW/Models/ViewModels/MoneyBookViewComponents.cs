@@ -1,13 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Bogus;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Web.Hosting;
 using System.Web.Mvc;
-using System.Xml.Linq;
 
 namespace MoneyTemplateHW.Models.ViewModels
 {
@@ -31,20 +25,20 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// </summary>
         public static IEnumerable<MoneyBookViewModel> GetFakeData()
         {
-            var path = HostingEnvironment.MapPath("~");
+            var Faker = new Faker<MoneyBookViewModel>()
+                     .RuleFor(o => o.Category, f => f.Random.Number(1, 2).ToString())
+                     .RuleFor(o => o.Money, f => f.Random.Number(1, 10000))
+                     .RuleFor(o => o.Date, f => f.Date.Between(DateTime.Today.AddDays(-30d), DateTime.Today).ToString("yyyy-MM-dd"));
 
-            //json 版
-            using (StreamReader r = new StreamReader(path + "\\App_Data\\TEST_DATA_JSON.JSON"))
+            var MoneyBookFaker = new List<MoneyBookViewModel>();
+
+
+            for (int i = 0; i < 50; i++)
             {
-                var readJason = JsonConvert.DeserializeObject<JObject>(r.ReadToEnd());
-
-                IList<JToken> results = readJason["records"]["record"].Children().ToList();
-
-                foreach (JToken result in results)
-                {
-                    yield return result.ToObject<MoneyBookViewModel>();
-                }
+                MoneyBookFaker.Add(Faker);
             }
+
+            return MoneyBookFaker;
         }
     }
 }
