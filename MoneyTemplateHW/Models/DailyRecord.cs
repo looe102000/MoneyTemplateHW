@@ -17,7 +17,6 @@ namespace MoneyTemplateHW.Models
 
         [Required(ErrorMessage = "請填入日期")]
         [DataType(DataType.Date, ErrorMessage = "請輸入正確的日期")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd}")]
         [判斷日期是否大於今日Attribute]
         public string Date { get; set; }
 
