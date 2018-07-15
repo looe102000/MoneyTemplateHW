@@ -1,7 +1,7 @@
-﻿using Bogus;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace MoneyTemplateHW.Models.ViewModels
 {
@@ -25,20 +25,18 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// </summary>
         public static IEnumerable<MoneyBookViewModel> GetFakeData()
         {
-            var Faker = new Faker<MoneyBookViewModel>()
-                     .RuleFor(o => o.Category, f => f.Random.Number(1, 2).ToString())
-                     .RuleFor(o => o.Money, f => f.Random.Number(1, 10000))
-                     .RuleFor(o => o.Date, f => f.Date.Between(DateTime.Today.AddDays(-30d), DateTime.Today).ToString("yyyy-MM-dd"));
+            SkillTreeHomeworkEntities db = new SkillTreeHomeworkEntities();
 
-            var MoneyBookFaker = new List<MoneyBookViewModel>();
+            var dbQuery = (from data in db.AccountBook.ToList()
+                           select new MoneyBookViewModel
+                           {
+                               Date = data.Dateee.ToString("yyyy-MM-dd"),
+                               Money = data.Amounttt,
+                               Description = data.Remarkkk,
+                               Category = data.Categoryyy.ToString(),
+                           });
 
-
-            for (int i = 0; i < 50; i++)
-            {
-                MoneyBookFaker.Add(Faker);
-            }
-
-            return MoneyBookFaker;
+            return dbQuery;
         }
     }
 }
