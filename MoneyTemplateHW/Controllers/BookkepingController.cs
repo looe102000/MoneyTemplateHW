@@ -1,6 +1,6 @@
 ﻿using MoneyTemplateHW.Models;
 using MoneyTemplateHW.Models.ViewModels;
-using System;
+using MoneyTemplateHW.Service;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -9,26 +9,21 @@ namespace MoneyTemplateHW.Controllers
 {
     public class BookkepingController : Controller
     {
-        // GET: BookkepingController
-        public ActionResult Index(MoneyBookViewModel MBV)
+        private readonly MoneyBookService _MoneyBookService;
+
+        public BookkepingController()
         {
-            if (string.IsNullOrWhiteSpace(MBV.Category) == false
-               && string.IsNullOrWhiteSpace(MBV.Date) == false
-               && string.IsNullOrWhiteSpace(MBV.Money.ToString()) == false
-               && string.IsNullOrWhiteSpace(MBV.Description) == false)
+            _MoneyBookService = new MoneyBookService();
+        }
+
+        // GET: BookkepingController
+        public ActionResult Index([Bind(Include = "Category,Money,Date,Description")]
+                                   DailyRecord DailyRecord)
+        {
+            if (ModelState.IsValid)
             {
-                SkillTreeHomeworkEntities db = new SkillTreeHomeworkEntities();
-
-                db.AccountBook.Add(new AccountBook
-                {
-                    Id = Guid.NewGuid(),
-                    Categoryyy = Convert.ToInt32(MBV.Category),
-                    Amounttt = Convert.ToInt32(MBV.Money),
-                    Dateee = Convert.ToDateTime(MBV.Date),
-                    Remarkkk = MBV.Description
-                });
-
-                db.SaveChanges();
+                _MoneyBookService.Add(DailyRecord);
+                _MoneyBookService.Save();
             }
 
             GetCategoryDropdownListModel();
@@ -61,7 +56,6 @@ namespace MoneyTemplateHW.Controllers
             return View();
         }
 
-
         private void GetCategoryDropdownListModel()
         {
             var options = new List<CategoryItem>
@@ -71,11 +65,10 @@ namespace MoneyTemplateHW.Controllers
                 new CategoryItem() { name = "收入", value = 1},
             };
 
-            ViewData["CategoryListItem"] = new SelectList(options,  "value", "name", 0);
+            ViewData["CategoryListItem"] = new SelectList(options, "value", "name", 0);
         }
 
-
-        class CategoryItem
+        private class CategoryItem
         {
             public string name { get; set; }
             public int? value { get; set; }
