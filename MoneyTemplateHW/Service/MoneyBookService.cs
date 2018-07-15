@@ -1,5 +1,8 @@
 ﻿using MoneyTemplateHW.Models;
+using MoneyTemplateHW.Models.ViewModels;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MoneyTemplateHW.Service
 {
@@ -12,7 +15,13 @@ namespace MoneyTemplateHW.Service
             _db = new SkillTreeHomeworkEntities();
         }
 
-        internal void Add(DailyRecord dailyRecord)
+
+        public IEnumerable<AccountBook> Lookup()
+        {
+            return _db.AccountBook.ToList();
+        }
+
+        internal void Add(MoneyBookViewModel dailyRecord)
         {
             if (string.IsNullOrWhiteSpace(dailyRecord.Category) == false
                && string.IsNullOrWhiteSpace(dailyRecord.Date) == false

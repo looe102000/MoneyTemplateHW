@@ -18,7 +18,7 @@ namespace MoneyTemplateHW.Controllers
 
         // GET: BookkepingController
         public ActionResult Index([Bind(Include = "Category,Money,Date,Description")]
-                                   DailyRecord DailyRecord)
+                                   MoneyBookViewModel DailyRecord)
         {
             if (ModelState.IsValid)
             {

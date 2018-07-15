@@ -169,7 +169,6 @@
     <Compile Include="Models\AccountBook.cs">
       <DependentUpon>MoneyBookModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DailyRecord.cs" />
     <Compile Include="Models\MoneyBookModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

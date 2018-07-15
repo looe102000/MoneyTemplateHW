@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using MoneyTemplateHW.Service;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 
 namespace MoneyTemplateHW.Models.ViewModels
 {
@@ -25,9 +25,9 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// </summary>
         public static IEnumerable<MoneyBookViewModel> GetFakeData()
         {
-            SkillTreeHomeworkEntities db = new SkillTreeHomeworkEntities();
+            MoneyBookService _MoneyBookService = new MoneyBookService();
 
-            var dbQuery = (from data in db.AccountBook.ToList()
+            var dbQuery = (from data in _MoneyBookService.Lookup()
                            select new MoneyBookViewModel
                            {
                                Date = data.Dateee.ToString("yyyy-MM-dd"),
