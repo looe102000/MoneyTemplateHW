@@ -9,13 +9,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => Model.Category, "類別", htmlAttributes: new { @class = "col-md-2 control-label " })
                 <div class="col-sm-10">
-                    @*@Html.DropDownListFor(model => model.category, Model.categorySelectItemList, htmlAttributes : new { @class = "form-control"})*@
-                    @*因為如果這裡也幫你改，那會改變到你的架構，所以先放回html，等我們教到的時候你自己再調整*@
-                    <select id="category" class="form-control">
-                        <option value="" selected>請選擇</option>
-                        <option>支出</option>
-                        <option>收入</option>
-                    </select>
+                    @Html.DropDownListFor(model => model.Category, (IEnumerable<SelectListItem>)ViewData["CategoryListItem"], new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
