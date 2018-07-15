@@ -190,6 +190,7 @@
     <Compile Include="Service\MoneyBookService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\HWOK_DAY2.PNG" />
     <Content Include="App_Data\HW_OK.PNG" />
     <Content Include="App_Data\HW_OK3.PNG" />
     <Content Include="App_Data\HW_OK4.PNG" />
