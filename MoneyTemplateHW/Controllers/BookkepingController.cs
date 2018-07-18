@@ -41,12 +41,7 @@ namespace MoneyTemplateHW.Controllers
         [ChildActionOnly]
         public ActionResult DataListAction(int? page)
         {
-            if (page == null)
-            {
-                page = 0;
-            }
-
-            var pageCnt = (int) page;
+            var pageCnt = page ?? 0;
             //分 10 頁
             var pageRows = 50;
 
