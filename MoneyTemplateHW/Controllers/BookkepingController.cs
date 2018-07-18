@@ -25,11 +25,11 @@ namespace MoneyTemplateHW.Controllers
         // GET: BookkepingController
         [HttpPost]
         public ActionResult Index([Bind(Include = "Category,Money,Date,Description")]
-                                  MoneyBookViewModel DailyRecord)
+                                  MoneyBookViewModel dailyRecord)
         {
             if (ModelState.IsValid)
             {
-                _MoneyBookService.Add(DailyRecord);
+                _MoneyBookService.Add(dailyRecord);
                 _MoneyBookService.Save();
             }
 
@@ -54,13 +54,13 @@ namespace MoneyTemplateHW.Controllers
             //MBV.MoneyBookDataList = MBV.MoneyBookDataList.AsEnumerable()
             //                                                .OrderByDescending(x => x.date)
             //                                                .ThenByDescending(x =>x.money).Skip((pageCnt -1) * pageRows).Take(pageRows).ToList();
-            ViewData["ListSource"] = MoneyBookViewComponents.GetFakeData()
+          var result= MoneyBookViewComponents.GetFakeData()
                                                             .OrderByDescending(d => d.Date)
                                                             .ThenByDescending(d => d.Money)
                                                             .Skip((pageCnt - 1) * pageRows).Take(pageRows)
                                                             .ToList();
 
-            return View();
+            return View(result);
         }
 
         private void GetCategoryDropdownListModel()

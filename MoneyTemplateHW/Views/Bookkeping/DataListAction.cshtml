@@ -1,8 +1,5 @@
-﻿@using MoneyTemplateHW.Models.ViewModels
-@using MoneyTemplateHW.Helper
-
-
-@model MoneyTemplateHW.Models.ViewModels.MoneyBookViewModel
+﻿@using MoneyTemplateHW.Helper
+@model IList<MoneyTemplateHW.Models.ViewModels.MoneyBookViewModel>
 
 @{
     Layout = null;
@@ -19,7 +16,7 @@
             </tr>
             @{
 
-                foreach (var item in ((List<MoneyBookViewModel>)ViewData["ListSource"]).Select((value, index) => new { index, value }))
+                foreach (var item in Model.Select((value, index) => new { index, value }))
                 {
                     <tr>
                         <td>@(item.index + 1 )</td>
