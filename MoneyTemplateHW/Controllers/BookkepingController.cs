@@ -16,9 +16,16 @@ namespace MoneyTemplateHW.Controllers
             _MoneyBookService = new MoneyBookService();
         }
 
+        public ActionResult Index()
+        {
+            GetCategoryDropdownListModel();
+            return View();
+        }
+
         // GET: BookkepingController
+        [HttpPost]
         public ActionResult Index([Bind(Include = "Category,Money,Date,Description")]
-                                   MoneyBookViewModel DailyRecord)
+                                  MoneyBookViewModel DailyRecord)
         {
             if (ModelState.IsValid)
             {
@@ -39,7 +46,7 @@ namespace MoneyTemplateHW.Controllers
                 page = 0;
             }
 
-            var pageCnt = (int)page;
+            var pageCnt = (int) page;
             //分 10 頁
             var pageRows = 50;
 
@@ -60,9 +67,9 @@ namespace MoneyTemplateHW.Controllers
         {
             var options = new List<CategoryItem>
             {
-                new CategoryItem() { name = "請選擇", value = null},
-                new CategoryItem() { name = "支出", value = 0},
-                new CategoryItem() { name = "收入", value = 1},
+                new CategoryItem() {name = "請選擇", value = null},
+                new CategoryItem() {name = "支出", value  = 0},
+                new CategoryItem() {name = "收入", value  = 1},
             };
 
             ViewData["CategoryListItem"] = new SelectList(options, "value", "name", 0);
@@ -70,8 +77,8 @@ namespace MoneyTemplateHW.Controllers
 
         private class CategoryItem
         {
-            public string name { get; set; }
-            public int? value { get; set; }
+            public string name  { get; set; }
+            public int?   value { get; set; }
         }
     }
 }
