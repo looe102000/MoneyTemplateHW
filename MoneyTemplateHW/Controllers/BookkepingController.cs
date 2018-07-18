@@ -62,9 +62,9 @@ namespace MoneyTemplateHW.Controllers
         {
             var options = new List<CategoryItem>
             {
-                new CategoryItem() {name = "請選擇", value = null},
-                new CategoryItem() {name = "支出", value  = 0},
-                new CategoryItem() {name = "收入", value  = 1},
+                new CategoryItem() {Name = "請選擇", Value = null},
+                new CategoryItem() {Name = "支出", Value  = 0},
+                new CategoryItem() {Name = "收入", Value  = 1},
             };
 
             ViewData["CategoryListItem"] = new SelectList(options, "value", "name", 0);
@@ -72,8 +72,8 @@ namespace MoneyTemplateHW.Controllers
 
         private class CategoryItem
         {
-            public string name  { get; set; }
-            public int?   value { get; set; }
+            public string Name  { get; set; }
+            public int?   Value { get; set; }
         }
     }
 }

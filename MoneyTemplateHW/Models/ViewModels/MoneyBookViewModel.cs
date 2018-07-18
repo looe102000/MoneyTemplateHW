@@ -32,7 +32,7 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// The amount.
         /// </value>
         [Required(ErrorMessage = "請填入金額")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "請輸入整數")]
+//        [RegularExpression(@"^[0-9]+$", ErrorMessage = "請輸入整數")]
         [Range(0, int.MaxValue, ErrorMessage = "超出範圍")]
         public decimal Money { get; set; }
 
