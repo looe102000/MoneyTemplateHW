@@ -184,7 +184,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MoneyBookModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModels\CategoryModel.cs" />
     <Compile Include="Models\ViewModels\MoneyBookViewModel.cs" />
     <Compile Include="Models\ViewModels\MoneyBookViewComponents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

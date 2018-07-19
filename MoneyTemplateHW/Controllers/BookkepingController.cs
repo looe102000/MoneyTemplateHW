@@ -16,7 +16,7 @@ namespace MoneyTemplateHW.Controllers
 
         public ActionResult Index()
         {
-            ViewData["CategoryListItem"] = new SelectList(CategoryModel.CategoryListItem, "value", "name", 0);
+            ViewData["CategoryListItem"] = new SelectList(MoneyBookViewComponents.CategoryListItem, "value", "name", 0);
 
             return View();
         }
@@ -32,7 +32,7 @@ namespace MoneyTemplateHW.Controllers
                 _MoneyBookService.Save();
             }
 
-            ViewData["CategoryListItem"] = new SelectList(CategoryModel.CategoryListItem, "value", "name", 0);
+            ViewData["CategoryListItem"] = new SelectList(MoneyBookViewComponents.CategoryListItem, "value", "name", 0);
 
             return View();
         }

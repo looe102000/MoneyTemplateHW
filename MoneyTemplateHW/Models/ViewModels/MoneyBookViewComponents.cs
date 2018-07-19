@@ -9,6 +9,18 @@ namespace MoneyTemplateHW.Models.ViewModels
     /// </summary>
     public static class MoneyBookViewComponents
     {
+        public static List<CategoryItem> CategoryListItem { get; set; }
+
+        static MoneyBookViewComponents()
+        {
+            CategoryListItem = new List<CategoryItem>
+            {
+                new CategoryItem() {Name = "請選擇", Value = null},
+                new CategoryItem() {Name = "支出", Value  = 0},
+                new CategoryItem() {Name = "收入", Value  = 1},
+            };
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MoneyBookViewComponents"/> class.
         /// </summary>
@@ -26,6 +38,12 @@ namespace MoneyTemplateHW.Models.ViewModels
                            });
 
             return dbQuery;
+        }
+
+        public class CategoryItem
+        {
+            public string Name { get; set; }
+            public int? Value { get; set; }
         }
     }
 }
