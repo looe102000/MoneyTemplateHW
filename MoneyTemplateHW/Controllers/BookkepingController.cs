@@ -16,13 +16,20 @@ namespace MoneyTemplateHW.Controllers
             _MoneyBookService = new MoneyBookService();
         }
 
+        public ActionResult Index()
+        {
+            GetCategoryDropdownListModel();
+            return View();
+        }
+
         // GET: BookkepingController
+        [HttpPost]
         public ActionResult Index([Bind(Include = "Category,Money,Date,Description")]
-                                   MoneyBookViewModel DailyRecord)
+                                  MoneyBookViewModel dailyRecord)
         {
             if (ModelState.IsValid)
             {
-                _MoneyBookService.Add(DailyRecord);
+                _MoneyBookService.Add(dailyRecord);
                 _MoneyBookService.Save();
             }
 
@@ -34,12 +41,7 @@ namespace MoneyTemplateHW.Controllers
         [ChildActionOnly]
         public ActionResult DataListAction(int? page)
         {
-            if (page == null)
-            {
-                page = 0;
-            }
-
-            var pageCnt = (int)page;
+            var pageCnt = page ?? 0;
             //分 10 頁
             var pageRows = 50;
 
@@ -47,22 +49,22 @@ namespace MoneyTemplateHW.Controllers
             //MBV.MoneyBookDataList = MBV.MoneyBookDataList.AsEnumerable()
             //                                                .OrderByDescending(x => x.date)
             //                                                .ThenByDescending(x =>x.money).Skip((pageCnt -1) * pageRows).Take(pageRows).ToList();
-            ViewData["ListSource"] = MoneyBookViewComponents.GetFakeData()
+          var result= MoneyBookViewComponents.GetFakeData()
                                                             .OrderByDescending(d => d.Date)
                                                             .ThenByDescending(d => d.Money)
                                                             .Skip((pageCnt - 1) * pageRows).Take(pageRows)
                                                             .ToList();
 
-            return View();
+            return View(result);
         }
 
         private void GetCategoryDropdownListModel()
         {
             var options = new List<CategoryItem>
             {
-                new CategoryItem() { name = "請選擇", value = null},
-                new CategoryItem() { name = "支出", value = 0},
-                new CategoryItem() { name = "收入", value = 1},
+                new CategoryItem() {Name = "請選擇", Value = null},
+                new CategoryItem() {Name = "支出", Value  = 0},
+                new CategoryItem() {Name = "收入", Value  = 1},
             };
 
             ViewData["CategoryListItem"] = new SelectList(options, "value", "name", 0);
@@ -70,8 +72,8 @@ namespace MoneyTemplateHW.Controllers
 
         private class CategoryItem
         {
-            public string name { get; set; }
-            public int? value { get; set; }
+            public string Name  { get; set; }
+            public int?   Value { get; set; }
         }
     }
 }

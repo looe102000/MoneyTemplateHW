@@ -25,9 +25,9 @@ namespace MoneyTemplateHW.Models.ViewModels
         /// </summary>
         public static IEnumerable<MoneyBookViewModel> GetFakeData()
         {
-            MoneyBookService _MoneyBookService = new MoneyBookService();
+            MoneyBookService moneyBookService = new MoneyBookService();
 
-            var dbQuery = (from data in _MoneyBookService.Lookup()
+            var dbQuery = (from data in moneyBookService.Lookup()
                            select new MoneyBookViewModel
                            {
                                Date = data.Dateee.ToString("yyyy-MM-dd"),
