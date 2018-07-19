@@ -8,3 +8,16 @@
 @Html.Partial("_AddPartial")
 
 @Html.Action("DataListAction", "Bookkeping")
+
+@section scripts
+{
+    <script>
+        $(function () {
+            $("[data-confirm]").click(function (e) {
+                e.preventDefault();
+                let current = $(this);
+                return (confirm(current.data("confirm")));
+            });
+        });
+    </script>
+}

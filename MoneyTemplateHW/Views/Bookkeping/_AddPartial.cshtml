@@ -38,22 +38,9 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-11 col-sm-4">
-                    <button type="submit" data-confirm="是否確定新增?" onclick="return confirm('是否確定新增');" class="btn btn-default">送出</button>
+                    <button type="submit" data-confirm="是否確定新增?" class="btn btn-default">送出</button>
                 </div>
             </div>
         </div>
     </div>
 }
-@*不知為啥他不能用.....*@
-@*@section scripts
-    {
-    <script>
-        $(function () {
-            $("[data-confirm]").click(function (e) {
-                e.preventDefault();
-                let current = $(this);
-                return (confirm(current.data("confirm")));
-            });
-        });
-    </script>
-}*@

@@ -1,7 +1,5 @@
-﻿using MoneyTemplateHW.Models;
-using MoneyTemplateHW.Models.ViewModels;
+﻿using MoneyTemplateHW.Models.ViewModels;
 using MoneyTemplateHW.Service;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -18,7 +16,8 @@ namespace MoneyTemplateHW.Controllers
 
         public ActionResult Index()
         {
-            GetCategoryDropdownListModel();
+            ViewData["CategoryListItem"] = new SelectList(CategoryModel.CategoryListItem, "value", "name", 0);
+
             return View();
         }
 
@@ -33,7 +32,7 @@ namespace MoneyTemplateHW.Controllers
                 _MoneyBookService.Save();
             }
 
-            GetCategoryDropdownListModel();
+            ViewData["CategoryListItem"] = new SelectList(CategoryModel.CategoryListItem, "value", "name", 0);
 
             return View();
         }
@@ -45,35 +44,13 @@ namespace MoneyTemplateHW.Controllers
             //分 10 頁
             var pageRows = 50;
 
-            //日期大到小；金額大到小
-            //MBV.MoneyBookDataList = MBV.MoneyBookDataList.AsEnumerable()
-            //                                                .OrderByDescending(x => x.date)
-            //                                                .ThenByDescending(x =>x.money).Skip((pageCnt -1) * pageRows).Take(pageRows).ToList();
-          var result= MoneyBookViewComponents.GetFakeData()
-                                                            .OrderByDescending(d => d.Date)
-                                                            .ThenByDescending(d => d.Money)
-                                                            .Skip((pageCnt - 1) * pageRows).Take(pageRows)
-                                                            .ToList();
+            var result = MoneyBookViewComponents.GetFakeData()
+                                                              .OrderByDescending(d => d.Date)
+                                                              .ThenByDescending(d => d.Money)
+                                                              .Skip((pageCnt - 1) * pageRows).Take(pageRows)
+                                                              .ToList();
 
             return View(result);
-        }
-
-        private void GetCategoryDropdownListModel()
-        {
-            var options = new List<CategoryItem>
-            {
-                new CategoryItem() {Name = "請選擇", Value = null},
-                new CategoryItem() {Name = "支出", Value  = 0},
-                new CategoryItem() {Name = "收入", Value  = 1},
-            };
-
-            ViewData["CategoryListItem"] = new SelectList(options, "value", "name", 0);
-        }
-
-        private class CategoryItem
-        {
-            public string Name  { get; set; }
-            public int?   Value { get; set; }
         }
     }
 }
