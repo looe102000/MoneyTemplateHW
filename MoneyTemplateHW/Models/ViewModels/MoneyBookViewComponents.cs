@@ -1,7 +1,6 @@
 ﻿using MoneyTemplateHW.Service;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 
 namespace MoneyTemplateHW.Models.ViewModels
 {
@@ -10,16 +9,6 @@ namespace MoneyTemplateHW.Models.ViewModels
     /// </summary>
     public static class MoneyBookViewComponents
     {
-        /// <summary>
-        /// The category select item list
-        /// </summary>
-        public static IEnumerable<SelectListItem> categorySelectItemList = new List<SelectListItem>
-        {
-            new SelectListItem {Text = "請選擇", Value = ""},
-            new SelectListItem {Text = "支出", Value  = "1"},
-            new SelectListItem {Text = "收入", Value  = "2"}
-        };
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MoneyBookViewComponents"/> class.
         /// </summary>
