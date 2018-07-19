@@ -13,6 +13,11 @@ namespace MoneyTemplateHW.Models.ViewModels
 
         static MoneyBookViewComponents()
         {
+            CreateCategoryListItem();
+        }
+
+        private static void CreateCategoryListItem()
+        {
             CategoryListItem = new List<CategoryItem>
             {
                 new CategoryItem() {Name = "請選擇", Value = null},
